@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model Client {
@@ -39,7 +39,7 @@ model Product {
   description String?
   sku         String   @unique
   category    String?
-  basePrice   Decimal  @db.Decimal(10, 2)
+  basePrice   Float
   imageUrl    String?
   isActive    Boolean  @default(true)
   createdAt   DateTime @default(now())
@@ -73,8 +73,8 @@ model PriceListItem {
   id          String   @id @default(cuid())
   priceListId String
   productId   String
-  price       Decimal  @db.Decimal(10, 2)
-  discount    Decimal? @db.Decimal(5, 2) // Percentage discount
+  price       Float
+  discount    Float? // Percentage discount
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
@@ -107,7 +107,7 @@ model Order {
   clientId    String
   orderNumber String      @unique
   status      OrderStatus @default(PENDING)
-  totalAmount Decimal     @db.Decimal(10, 2)
+  totalAmount Float
   notes       String?
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
@@ -124,7 +124,7 @@ model OrderItem {
   orderId   String
   productId String
   quantity  Int
-  price     Decimal  @db.Decimal(10, 2)
+  price     Float
   createdAt DateTime @default(now())
 
   // Relations
