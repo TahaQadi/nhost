@@ -4,7 +4,7 @@ import { verifyToken } from '@/lib/auth'
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const authHeader = request.headers.get('authorization')
@@ -27,6 +27,7 @@ export async function PUT(
     }
 
     const { quantity } = await request.json()
+    const { id } = await params
 
     if (quantity < 1) {
       return NextResponse.json(
@@ -37,7 +38,7 @@ export async function PUT(
 
     const cartItem = await prisma.cartItem.findFirst({
       where: {
-        id: params.id,
+        id: id,
         clientId: user.id
       }
     })
@@ -50,7 +51,7 @@ export async function PUT(
     }
 
     const updatedItem = await prisma.cartItem.update({
-      where: { id: params.id },
+      where: { id: id },
       data: { quantity }
     })
 
@@ -69,7 +70,7 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const authHeader = request.headers.get('authorization')
@@ -91,9 +92,10 @@ export async function DELETE(
       )
     }
 
+    const { id } = await params
     const cartItem = await prisma.cartItem.findFirst({
       where: {
-        id: params.id,
+        id: id,
         clientId: user.id
       }
     })
@@ -106,7 +108,7 @@ export async function DELETE(
     }
 
     await prisma.cartItem.delete({
-      where: { id: params.id }
+      where: { id: id }
     })
 
     return NextResponse.json({ 

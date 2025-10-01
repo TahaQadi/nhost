@@ -143,7 +143,7 @@ export default function CartPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading cart...</p>
         </div>
       </div>
@@ -161,7 +161,7 @@ export default function CartPage() {
                 <ArrowLeftIcon className="h-5 w-5 mr-1" />
                 Back to Dashboard
               </Link>
-              <ShoppingCartIcon className="h-8 w-8 text-primary-600" />
+              <ShoppingCartIcon className="h-8 w-8 text-blue-600" />
               <h1 className="ml-2 text-2xl font-bold text-gray-900">Shopping Cart</h1>
             </div>
           </div>

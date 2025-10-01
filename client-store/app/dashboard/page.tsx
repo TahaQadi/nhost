@@ -82,7 +82,7 @@ export default function DashboardPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading your dashboard...</p>
         </div>
       </div>
@@ -96,7 +96,7 @@ export default function DashboardPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <ShoppingBagIcon className="h-8 w-8 text-primary-600" />
+              <ShoppingBagIcon className="h-8 w-8 text-blue-600" />
               <h1 className="ml-2 text-2xl font-bold text-gray-900">Client Store</h1>
             </div>
             <div className="flex items-center space-x-4">
@@ -128,7 +128,7 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="card">
             <div className="flex items-center">
-              <ShoppingBagIcon className="h-8 w-8 text-primary-600" />
+              <ShoppingBagIcon className="h-8 w-8 text-blue-600" />
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Available Products</p>
                 <p className="text-2xl font-bold text-gray-900">{products.length}</p>
@@ -161,7 +161,7 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <Link href="/products" className="card hover:shadow-md transition-shadow duration-200">
             <div className="text-center">
-              <ShoppingBagIcon className="h-12 w-12 text-primary-600 mx-auto mb-4" />
+              <ShoppingBagIcon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Browse Products</h3>
               <p className="text-gray-600">View your personalized product catalog</p>
             </div>
@@ -226,7 +226,7 @@ export default function DashboardPage() {
                   <p className="text-gray-600 text-sm mb-4">{product.description}</p>
                   <div className="flex justify-between items-center">
                     <div>
-                      <span className="text-2xl font-bold text-primary-600">
+                      <span className="text-2xl font-bold text-blue-600">
                         ${product.price ? product.price.toFixed(2) : product.basePrice.toFixed(2)}
                       </span>
                       {product.discount && product.discount > 0 && (

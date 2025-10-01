@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  outputFileTracingRoot: '/workspace/client-store',
 }
 
 module.exports = nextConfig

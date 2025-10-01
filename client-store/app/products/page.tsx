@@ -60,7 +60,8 @@ export default function ProductsPage() {
         setProducts(data.products || [])
         
         // Extract unique categories
-        const uniqueCategories = [...new Set(data.products.map((p: Product) => p.category).filter(Boolean))]
+        const categories = data.products.map((p: Product) => p.category).filter(Boolean) as string[]
+        const uniqueCategories = Array.from(new Set(categories))
         setCategories(uniqueCategories)
       } else {
         setError('Failed to load products')
@@ -117,7 +118,7 @@ export default function ProductsPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading products...</p>
         </div>
       </div>
@@ -135,7 +136,7 @@ export default function ProductsPage() {
                 <ArrowLeftIcon className="h-5 w-5 mr-1" />
                 Back to Dashboard
               </Link>
-              <ShoppingBagIcon className="h-8 w-8 text-primary-600" />
+              <ShoppingBagIcon className="h-8 w-8 text-blue-600" />
               <h1 className="ml-2 text-2xl font-bold text-gray-900">Products</h1>
             </div>
             <Link href="/dashboard/cart" className="flex items-center text-gray-600 hover:text-gray-900">
@@ -237,7 +238,7 @@ export default function ProductsPage() {
 
                 <div className="flex justify-between items-center mb-4">
                   <div>
-                    <span className="text-2xl font-bold text-primary-600">
+                    <span className="text-2xl font-bold text-blue-600">
                       ${product.price.toFixed(2)}
                     </span>
                     {product.discount && product.discount > 0 && (

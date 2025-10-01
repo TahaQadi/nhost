@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken'
+import bcrypt from 'bcryptjs'
 import { AuthUser } from '@/types'
 
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret'
@@ -16,11 +17,9 @@ export function verifyToken(token: string): AuthUser | null {
 }
 
 export function hashPassword(password: string): string {
-  const bcrypt = require('bcryptjs')
   return bcrypt.hashSync(password, 10)
 }
 
 export function comparePassword(password: string, hash: string): boolean {
-  const bcrypt = require('bcryptjs')
   return bcrypt.compareSync(password, hash)
 }

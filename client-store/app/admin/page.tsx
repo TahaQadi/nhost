@@ -112,7 +112,7 @@ export default function AdminPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading admin panel...</p>
         </div>
       </div>
@@ -126,7 +126,7 @@ export default function AdminPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <UserGroupIcon className="h-8 w-8 text-primary-600" />
+              <UserGroupIcon className="h-8 w-8 text-blue-600" />
               <h1 className="ml-2 text-2xl font-bold text-gray-900">Admin Panel</h1>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function AdminPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="card">
             <div className="flex items-center">
-              <UserGroupIcon className="h-8 w-8 text-primary-600" />
+              <UserGroupIcon className="h-8 w-8 text-blue-600" />
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Total Clients</p>
                 <p className="text-2xl font-bold text-gray-900">{clients.length}</p>
@@ -181,7 +181,7 @@ export default function AdminPage() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`py-4 px-1 border-b-2 font-medium text-sm ${
                     activeTab === tab.id
-                      ? 'border-primary-500 text-primary-600'
+                      ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -249,7 +249,7 @@ export default function AdminPage() {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <div className="flex space-x-2">
-                              <button className="text-primary-600 hover:text-primary-900">
+                              <button className="text-blue-600 hover:text-blue-900">
                                 <PencilIcon className="h-4 w-4" />
                               </button>
                               <button className="text-red-600 hover:text-red-900">
@@ -319,7 +319,7 @@ export default function AdminPage() {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <div className="flex space-x-2">
-                              <button className="text-primary-600 hover:text-primary-900">
+                              <button className="text-blue-600 hover:text-blue-900">
                                 <PencilIcon className="h-4 w-4" />
                               </button>
                               <button className="text-red-600 hover:text-red-900">
@@ -384,7 +384,7 @@ export default function AdminPage() {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <div className="flex space-x-2">
-                              <button className="text-primary-600 hover:text-primary-900">
+                              <button className="text-blue-600 hover:text-blue-900">
                                 <PencilIcon className="h-4 w-4" />
                               </button>
                               <button className="text-red-600 hover:text-red-900">
